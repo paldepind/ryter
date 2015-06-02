@@ -1,18 +1,18 @@
 function findMatch(string, routes) {
   string = string.split('?');
   var i, fn, part, parts = string[0].toLowerCase().split('/');
-  var params = [], focus = routes, query = {};
+  var params = [], query = {};
   for (i = 0; i < parts.length; ++i) {
     part = parts[i];
-    if (focus[part] !== undefined) {
-      focus = focus[part];
-    } else if (focus['*'] !== undefined) {
-      focus = focus['*'];
+    if (routes[part] !== undefined) {
+      routes = routes[part];
+    } else if (routes['*'] !== undefined) {
+      routes = routes['*'];
       params.push(part);
     } else {
       break;
     }
-    if (focus.fn !== undefined) fn = focus.fn;
+    if (routes.fn !== undefined) fn = routes.fn;
   }
   if (string.length > 1) {
     parts = string[1].split('&');
@@ -47,12 +47,9 @@ function match(string, routes) {
 }
 
 function normalize(url) {
-  var preSlash = url.charAt(0) === '/',
+  var begin = url.charAt(0) === '/' ? 1 : 0,
       postSlash = url.charAt(url.length - 1) === '/';
-  return preSlash && postSlash ? url.slice(1, -1)
-       : preSlash              ? url.slice(1)
-       : postSlash             ? url.slice(0, -1)
-                               : url;
+  return postSlash ? url.slice(begin, -1) : url.slice(begin);
 }
 
 function init(desc) {
