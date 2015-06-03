@@ -1,0 +1,30 @@
+{
+  "name": "ryter",
+  "version": "0.0.1",
+  "description": "A tiny router.",
+  "main": "ryter.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "testem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paldepind/ryter.git"
+  },
+  "keywords": [
+    "router",
+    "small",
+    "micro",
+    "functional",
+    "fast",
+    "performance"
+  ],
+  "author": "Simon Friis Vindum",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paldepind/ryter/issues"
+  },
+  "homepage": "https://github.com/paldepind/ryter#readme"
+}
