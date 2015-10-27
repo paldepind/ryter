@@ -26,7 +26,7 @@ function findMatch(string, routes) {
 }
 
 function createRoutes(routesObj) {
-  var routes = {}, string, tring, parts, i, p;
+  var routes = {}, string, focus, parts, i, p;
   for (string in routesObj) {
     focus = routes;
     parts = normalize(string).toLowerCase().split('/');
